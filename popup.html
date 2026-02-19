@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Tab Renamer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- VIEW 1: Rules List -->
+  <div id="view-list" class="view active">
+    <header class="main-header">
+      <div class="header-content">
+        <h1>Auto Tab Renamer</h1>
+        <span class="version">v1.1.0</span>
+      </div>
+      <button id="add-btn" class="primary-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Add Rule
+      </button>
+    </header>
+
+    <div id="rules-container" class="scroll-container">
+      <!-- Rules injected via JS -->
+    </div>
+  </div>
+
+  <!-- VIEW 2: Add/Edit Form -->
+  <div id="view-form" class="view hidden">
+    <header class="form-header">
+      <button id="back-btn" class="icon-btn" title="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <h2 id="form-title">Add Rule</h2>
+    </header>
+
+    <div class="form-content scroll-container">
+
+      <button id="autofill-btn" class="autofill-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        Auto-Fill from Current Tab
+      </button>
+
+      <div class="input-group">
+        <label for="rule-name">Name</label>
+        <input type="text" id="rule-name" placeholder="e.g. Google Gemini">
+      </div>
+
+      <div class="input-group">
+        <label for="rule-pattern">URL Regex Pattern</label>
+        <input type="text" id="rule-pattern" placeholder="e.g. gemini\.google\.com">
+      </div>
+
+      <div class="input-group">
+        <label for="rule-selector">CSS Selector</label>
+        <div class="input-with-action">
+          <input type="text" id="rule-selector" placeholder="e.g. h1.title">
+        </div>
+        <button id="test-btn" class="test-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Test Selector in Current Tab
+        </button>
+      </div>
+
+      <div class="input-group">
+        <label for="rule-clean">Clean Text (Optional)</label>
+        <input type="text" id="rule-clean" placeholder="Text to remove from title">
+        <small>Removes specific text pieces from the final title.</small>
+      </div>
+
+    </div>
+
+    <footer class="form-actions">
+      <label class="checkbox-container">
+        <input type="checkbox" id="auto-refresh-check" checked>
+        <span class="checkmark"></span>
+        Auto-Refresh
+      </label>
+      <div class="action-buttons">
+        <button id="cancel-btn" class="secondary-btn">Cancel</button>
+        <button id="save-btn" class="primary-btn full-width">Save Rule</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
