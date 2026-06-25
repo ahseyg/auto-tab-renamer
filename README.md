@@ -36,7 +36,7 @@
 ## Screenshots
 
 ### Extension Interface
-![Auto Tab Renamer Screenshot](../screenshot.png)
+![Auto Tab Renamer Screenshot](screenshot.png)
 
 ---
 
