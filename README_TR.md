@@ -36,7 +36,7 @@
 ## Ekran Görüntüleri
 
 ### Eklenti Arayüzü
-![Auto Tab Renamer Ekran Görüntüsü](screenshot.png)
+![Auto Tab Renamer Ekran Görüntüsü](assets/screenshot.png)
 
 ---
 
